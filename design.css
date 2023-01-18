@@ -197,6 +197,80 @@ mark.green{
     left: 0;
     margin-left: 3.5%;
 }
+/*- PAST WORK -*/
+.pw{
+    background-color: #F8F9FA;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.gallery{
+    background-color: #F8F9FA;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 60vw;
+}
+.slider{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: rotate 30s linear infinite;
+}
+.slider span{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i)*45deg)) translateZ(350px);
+}
+.slider span img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    border-radius: 20px;
+    transition: 2s;
+}
+.slider span:hover img{
+    transform: translateY(-50px) scale(1.2);
+}
+/*- FOOTER -*/
+.footer{
+    min-height: 5vw;
+    background-color: #F8F7F1;
+    grid-template-rows: 2;
+    grid-template-areas:
+    "copyright_text"
+    "footer_links";
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.footer .footer_content{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    margin-bottom: auto;
+    list-style-type: none;
+}
+.footer .footer_content .footer_links{
+    margin-top: 1%;
+}
 /*- BACK TO TOP BUTTON -*/
 .btn{
     display: none;
@@ -213,7 +287,6 @@ mark.green{
     border: none;
     animation: fadeIn 1s backwards;
 }
-
 /*- Typing animation -*/
 .var-highlight {
     color: #c0ad60;
@@ -266,6 +339,16 @@ mark.green{
     0%{
         opacity: 0;
         transform: scale(.5) translateY(-50px);
+    }
+}
+
+/*- Rotating -*/
+@keyframes rotate{
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(360deg);
     }
 }
 
